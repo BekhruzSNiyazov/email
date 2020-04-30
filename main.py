@@ -9,8 +9,10 @@ body = input("Body: ")
 message = f"""\
 Subject: {subject}
 
-{body}"""
+{body}
+"""
 server = smtplib.SMTP(f"smtp.{server}.com", 587)
 server.starttls()
 server.login(_from, password)
 server.sendmail(_from, to, message)
+print("Sent.")
